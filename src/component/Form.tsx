@@ -1,4 +1,9 @@
 import './Form.css'
+import { InputEmail } from './Input_Components/InputEmail'
+import { InputFirstname } from './Input_Components/InputFirstname'
+import { InputLastname } from './Input_Components/InputLastname'
+import { InputRadioGeneral } from './Input_Components/InputRadioGeneral'
+import { InputRadioSupport } from './Input_Components/InputRadioSupport'
 
 export const Form = () => {
   return (
@@ -7,36 +12,17 @@ export const Form = () => {
         <form className="max-w-full mt-[2rem] flex gap-[1.5rem] flex-col">
             {/* first-last name group div */}
             <div className="flex gap-[1.5rem] flex-col">
-                <div>
-                    <label className="labelText block" htmlFor="firstName">First Name <span className="text-[#0C7D69]">*</span></label>
-                    <input className="inputSize" type="text" name="firstName" />
-                </div>
-                <div>
-                    <label className="labelText block" htmlFor="lastName">Last Name <span className="text-[#0C7D69]">*</span></label>
-                    <input className="inputSize" type="text" name="lastName" />
-                </div>
+                <InputFirstname />
+                <InputLastname />
             </div>
             {/* email */}
-            <div>
-                <label className="labelText block" htmlFor="email">Email Adress <span className="text-[#0C7D69]">*</span></label>
-                <input className="inputSize" type="email" name="email" />
-            </div>
+            <InputEmail />
             {/* radio group div */}
             <div className=''>
                 <label className="labelText block">Query Type <span className="text-[#0C7D69]">*</span></label>
                 <div>
-                    <div>
-                        <label className="radioLabel flex align-center" htmlFor='generalEnquiry'>
-                            <input className='mt-[2px]' type="radio" id='generalEnquiry' name='group1' />
-                            General Enquiry
-                        </label>
-                    </div>
-                    <div>
-                        <label className="radioLabel flex align-center" htmlFor='supportRequest'>
-                            <input className='mt-[2px]' type="radio" id='supportRequest' name='group1'/>
-                            Support Request
-                        </label>
-                    </div>
+                    <InputRadioGeneral />
+                    <InputRadioSupport />
                 </div>
             </div>
         </form>
