@@ -1,9 +1,12 @@
 import './Form.css'
+import { FormButton } from './Input_Components/FormButton'
+import { InputCheckbox } from './Input_Components/InputCheckbox'
 import { InputEmail } from './Input_Components/InputEmail'
 import { InputFirstname } from './Input_Components/InputFirstname'
 import { InputLastname } from './Input_Components/InputLastname'
 import { InputRadioGeneral } from './Input_Components/InputRadioGeneral'
 import { InputRadioSupport } from './Input_Components/InputRadioSupport'
+import { InputTextArea } from './Input_Components/InputTextArea'
 
 export const Form = () => {
   return (
@@ -25,6 +28,9 @@ export const Form = () => {
                     <InputRadioSupport />
                 </div>
             </div>
+            <InputTextArea />
+            <InputCheckbox />
+            <FormButton />
         </form>
     </div>
   )
