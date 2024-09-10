@@ -1,48 +1,43 @@
 input[type="radio"] {
-    appearance: none; /* Removes default styling */
-    margin-right: 10px; /* Space between the radio and the label */
-    width: 20px; /* Width of the custom radio button */
-    height: 20px; /* Height of the custom radio button */
-    border: 2px solid #ccc; /* Border for the custom radio */
-    border-radius: 50%; /* Makes the radio circular */
-    outline: none; /* Removes the outline */
-    transition: background 0.3s, border-color 0.3s; /* Smooth transition for background and border */
+    appearance: none; 
+    margin-right: 10px; 
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #ccc; 
+    border-radius: 50%; 
+    outline: none; 
+    transition: background 0.3s, border-color 0.3s; 
 }
 
-/* Styles when the radio button is checked */
+
 input[type="radio"]:checked {
-    border-color: #4CAF50; /* Changes border color when checked */
+    border-color: #4CAF50; 
     background-image: radial-gradient(circle at center, #4CAF50 35%, transparent 40%);
-    /* Creates a dot in the center when checked */
+
 }
 
-/* Hover styles for the radio buttons */
 input[type="radio"]:hover {
-    border-color: #4CAF50; /* Changes border color on hover */
+    border-color: #4CAF50; 
 }
 
-
-
-
-/* Styles for the label text */
 .radioLabel {
     font-size: 18px;
     padding: 13px 24px;
     height: '3.18rem';
-    display: block; /* Makes the label a block to wrap the input */
-    position: relative; /* Needed to position the pseudo-elements */
-    cursor: pointer; /* Changes the cursor to indicate clickable area */
-    color: #2A4144; /* Sets the text color */
-    background-color: #ffffff; /* Sets the background color */
-    border: 1px solid #86A2A5; /* Adds a border to the label */
-    border-radius: 8px; /* Rounds the corners of the label */
-    margin-bottom: 24px; /* Adds space between each label */
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for background and border */
+    display: block; 
+    position: relative; 
+    cursor: pointer; 
+    color: #2A4144; 
+    background-color: #ffffff; 
+    border: 1px solid #86A2A5; 
+    border-radius: 8px; 
+    margin-bottom: 24px; 
+    transition: background-color 0.3s, border-color 0.3s; 
 }
 
-/* Hover styles for the label */
+
 .radioLabel:hover {
-    background-color: #e9ffe9; /* Changes background on hover */
-    border-color: #4CAF50; /* Changes border color on hover */
+    background-color: #e9ffe9; 
+    border-color: #4CAF50; 
 
 }
