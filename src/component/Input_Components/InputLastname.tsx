@@ -1,8 +1,8 @@
 export const InputLastname = () => {
   return (
-    <div>
+    <div className="md:w-[20rem]">
         <label className="labelText block" htmlFor="lastName">Last Name <span className="text-[#0C7D69]">*</span></label>
-        <input className="inputSize" type="text" name="lastName" />
+        <input className="inputSize w-full" type="text" name="lastName" />
     </div>
   )
 }

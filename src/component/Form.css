@@ -23,7 +23,7 @@ input[type="radio"]:hover {
 .radioLabel {
     font-size: 18px;
     padding: 13px 24px;
-    height: '3.18rem';
+    max-height: '3.18rem';
     display: block; 
     position: relative; 
     cursor: pointer; 
@@ -40,4 +40,11 @@ input[type="radio"]:hover {
     background-color: #e9ffe9; 
     border-color: #4CAF50; 
 
+}
+
+
+@media (min-width: 834px) {
+    #form {
+        margin-inline: auto;
+    }
 }
