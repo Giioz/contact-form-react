@@ -6,7 +6,7 @@ import { InputEmail } from './Input_Components/InputEmail'
 import { InputFirstname } from './Input_Components/InputFirstname'
 import { InputLastname } from './Input_Components/InputLastname'
 import { InputTextArea } from './Input_Components/InputTextArea'
-import { formType } from '../types/formTypes'
+import { FormErrors, formType } from '../types/formTypes'
 import { InputRadio } from './Input_Components/InputRadio'
 import Validation from './validations/Validation'
 
@@ -20,7 +20,7 @@ export const Form = () => {
         message: '',
         terms: false,
   })
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState<FormErrors>({})
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value} = e.target
         setFormValues({
@@ -44,8 +44,9 @@ export const Form = () => {
   }
   const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        setErrors(Validation(formValues))
-        console.log("Form Data", formValues)
+        console.log("Form Data", formValues, "errors", errors)
+        const validationErrors = Validation(formValues)
+        setErrors(validationErrors)
   }
 
 
@@ -55,11 +56,12 @@ export const Form = () => {
         <form className="max-w-full mt-[2rem] flex gap-[1.5rem] flex-col" onSubmit={handleSubmit}>
             {/* first-last name group div */}
             <div className="w-[100%] flex gap-[1.5rem] flex-col md:flex-row">
-                <InputFirstname value={formValues.firstName} onChange={handleInputChange}/>
-                <InputLastname value={formValues.lastName} onChange={handleInputChange}/>
+                <InputFirstname value={formValues.firstName} onChange={handleInputChange} errors={errors}/>
+
+                <InputLastname value={formValues.lastName} onChange={handleInputChange} errors={errors}/>
             </div>
             {/* email */}
-            <InputEmail value={formValues.email} onChange={handleInputChange}/>
+            <InputEmail value={formValues.email} onChange={handleInputChange} errors={errors}/>
             {/* radio group div */}
             <div>
                 <label className="labelText block">Query Type <span className="text-[#0C7D69]">*</span></label>
@@ -67,7 +69,7 @@ export const Form = () => {
                     <InputRadio 
                         value={formValues.chooseOption} 
                         onChange={handleInputChange}
-                        
+                        errors={errors}
                         options={[
                             {htmlFor : 'generalEnquiry', values: 'General Enquiry'},
                             {htmlFor : 'supportRequest', values: 'Support Request'}
@@ -75,8 +77,8 @@ export const Form = () => {
                         />
                 </div>
             </div>
-            <InputTextArea value={formValues.message} onChange={handleTextAreaChange}/>
-            <InputCheckbox value={formValues.terms} onChange={handleCheckboxChange}/>
+            <InputTextArea value={formValues.message} onChange={handleTextAreaChange} errors={errors}/>
+            <InputCheckbox value={formValues.terms} onChange={handleCheckboxChange} errors={errors}/>
             <FormButton />
         </form>
     </div>
