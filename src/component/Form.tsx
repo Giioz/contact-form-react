@@ -44,9 +44,15 @@ export const Form = () => {
   }
   const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        console.log("Form Data", formValues, "errors", errors)
         const validationErrors = Validation(formValues)
         setErrors(validationErrors)
+
+        if (Object.keys(validationErrors).length === 0) {
+            console.log("Form Data", formValues);
+          } else {
+            console.log("Form didnt submit");
+          }
+
   }
 
 
