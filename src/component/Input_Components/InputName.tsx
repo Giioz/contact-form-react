@@ -1,6 +1,6 @@
-import { InputText } from "../../types/formTypes"
+import { InputText } from "src/types/formTypes"
 
-export const InputName: React.FC<InputText> = ({onChange, errors, options}) => {
+export const InputName: React.FC<InputText> = ({onChange, options}) => {
   return (
     <>
         {options?.map((option) => (

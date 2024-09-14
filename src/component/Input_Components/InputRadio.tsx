@@ -1,4 +1,4 @@
-import { InputFieldProps } from "../../types/formTypes"
+import { InputFieldProps } from "src/types/formTypes"
 
 export const InputRadio:React.FC<InputFieldProps> = ({value, options, onChange,errors}) => {
   return (

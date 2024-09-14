@@ -3,8 +3,6 @@ import './Form.css'
 import { FormButton } from './Input_Components/FormButton'
 import { InputCheckbox } from './Input_Components/InputCheckbox'
 import { InputEmail } from './Input_Components/InputEmail'
-import { InputFirstname } from './Input_Components/InputFirstname'
-import { InputLastname } from './Input_Components/InputLastname'
 import { InputTextArea } from './Input_Components/InputTextArea'
 import { FormErrors, formType } from '../types/formTypes'
 import { InputRadio } from './Input_Components/InputRadio'
@@ -60,7 +58,6 @@ export const Form = () => {
 
   const hasErrorsFirstName = errors.firstName !== undefined
   const hasErrorsLastName = errors.lastName !== undefined
-  console.log(hasErrorsFirstName, hasErrorsLastName)
 
   return (
     <div className="max-w-[45.5rem] h-auto p-[1.5rem] bg-white mx-sm my-[2rem] rounded-[1rem] md:max-w-[46rem] md:mx-[3rem] md:p-[40px]" id='form'>
@@ -68,9 +65,6 @@ export const Form = () => {
         <form className="max-w-full mt-[2rem] flex gap-[1.5rem] flex-col" onSubmit={handleSubmit}>
             {/* first-last name group div */}
             <div className="w-[100%] flex gap-[1.5rem] flex-col md:flex-row">
-                {/* <InputFirstname value={formFirstname} onChange={handleInputChange} errors={errors}/>
-
-                <InputLastname value={formLastname} onChange={handleInputChange} errors={errors}/> */}
                 <InputName 
                     onChange={handleInputChange}
                     options={[

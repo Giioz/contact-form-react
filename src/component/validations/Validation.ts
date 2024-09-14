@@ -1,4 +1,4 @@
-import { formType } from "../../types/formTypes";
+import { formType } from "src/types/formTypes";
 
 export default function Validation(values:formType){
     const errors: { [key: string]: string } = {}; 

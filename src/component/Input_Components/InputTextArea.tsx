@@ -1,4 +1,4 @@
-import { InputTextAreaProps } from "../../types/formTypes"
+import { InputTextAreaProps } from "src/types/formTypes"
 
 export const InputTextArea: React.FC<InputTextAreaProps> = ({value, onChange, errors}) => {
   return (

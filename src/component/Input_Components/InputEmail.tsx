@@ -1,4 +1,4 @@
-import { InputText } from "../../types/formTypes"
+import { InputText } from "src/types/formTypes"
 
 export const InputEmail: React.FC<InputText> = ({value, onChange, errors}) => {
   return (

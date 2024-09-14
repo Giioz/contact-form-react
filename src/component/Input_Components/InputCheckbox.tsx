@@ -1,4 +1,4 @@
-import { InputCheckboxProps } from "../../types/formTypes"
+import { InputCheckboxProps } from "src/types/formTypes"
 
 export const InputCheckbox: React.FC<InputCheckboxProps> = ({value, onChange, errors}) => {
   return (
