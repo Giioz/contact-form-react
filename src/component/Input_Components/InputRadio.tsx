@@ -1,6 +1,6 @@
-import { InputRadioProps } from "../../types/formTypes"
+import { InputFieldProps } from "../../types/formTypes"
 
-export const InputRadio:React.FC<InputRadioProps> = ({value, options, onChange,errors}) => {
+export const InputRadio:React.FC<InputFieldProps> = ({value, options, onChange,errors}) => {
   return (
     <>
       <div className="md:max-w-[41rem] md:flex md:gap-[1.5rem]">

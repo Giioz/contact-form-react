@@ -9,6 +9,7 @@ import { InputTextArea } from './Input_Components/InputTextArea'
 import { FormErrors, formType } from '../types/formTypes'
 import { InputRadio } from './Input_Components/InputRadio'
 import Validation from './validations/Validation'
+import { InputName } from './Input_Components/InputName'
 
 export const Form = () => {
 
@@ -54,7 +55,12 @@ export const Form = () => {
           }
 
   }
+  const formFirstname = formValues.firstName
+  const formLastname = formValues.lastName
 
+  const hasErrorsFirstName = errors.firstName !== undefined
+  const hasErrorsLastName = errors.lastName !== undefined
+  console.log(hasErrorsFirstName, hasErrorsLastName)
 
   return (
     <div className="max-w-[45.5rem] h-auto p-[1.5rem] bg-white mx-sm my-[2rem] rounded-[1rem] md:max-w-[46rem] md:mx-[3rem] md:p-[40px]" id='form'>
@@ -62,9 +68,16 @@ export const Form = () => {
         <form className="max-w-full mt-[2rem] flex gap-[1.5rem] flex-col" onSubmit={handleSubmit}>
             {/* first-last name group div */}
             <div className="w-[100%] flex gap-[1.5rem] flex-col md:flex-row">
-                <InputFirstname value={formValues.firstName} onChange={handleInputChange} errors={errors}/>
+                {/* <InputFirstname value={formFirstname} onChange={handleInputChange} errors={errors}/>
 
-                <InputLastname value={formValues.lastName} onChange={handleInputChange} errors={errors}/>
+                <InputLastname value={formLastname} onChange={handleInputChange} errors={errors}/> */}
+                <InputName 
+                    onChange={handleInputChange}
+                    options={[
+                        {value: formFirstname, label : "First Name", attrTexts: "firstName", error: errors.firstName, hasErrors: hasErrorsFirstName},
+                        {value: formLastname, label :"Last Name", attrTexts: "lastName", error: errors.lastName, hasErrors: hasErrorsLastName}
+                    ]}
+                />
             </div>
             {/* email */}
             <InputEmail value={formValues.email} onChange={handleInputChange} errors={errors}/>

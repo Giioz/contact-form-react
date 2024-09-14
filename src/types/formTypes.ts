@@ -16,9 +16,12 @@ export interface FormErrors {
     checkbox?: string;
   }
 
+// es iterface agararis sachiro, inputfieldprops shi gavaertiane
+
 export interface InputText {
-    value: string;
-    errors: FormErrors,
+    value?: string;
+    errors?: FormErrors,
+    options?: { value:string, label: string, attrTexts:string, error?: string, hasErrors: boolean }[]
     onChange: (e : React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -33,7 +36,7 @@ export interface InputTextAreaProps {
     errors: FormErrors,
     onChange: (e : React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-export interface InputRadioProps {
+export interface InputFieldProps {
     value: string;
     errors: FormErrors,
     options: { values:string, htmlFor:string}[];
